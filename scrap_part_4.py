@@ -16,7 +16,7 @@ def dl_img(url, file_path, file_name):
 general_url = "http://books.toscrape.com/catalogue/page-1.html"
 url_img_list = []
 title_element = []
-path_name = "/Users/dev/Desktop/Done/P2_tarik_sadkhi/Image"
+
 
 i = 1
 result = requests.get(general_url)
@@ -48,5 +48,5 @@ except os.error:
 
 
 for url, title in zip(url_img_list, title_element):
-    dl_img(url, path_name, title)
+    dl_img(url, "Image", title)
     
