@@ -3,6 +3,9 @@ from bs4 import BeautifulSoup
 import csv
 import os
 
+
+# Création de fonction pour chaque données requises:
+
 #UPC
 def upc_page(soup):
     tds = soup.findAll("td")
@@ -80,7 +83,7 @@ def image_url(soup):
 
 
 
-# Scraping
+# Scraping d'une page spécifique au choix
 page_url = "http://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html"
 page_scrap_list = [page_url]
 
@@ -101,11 +104,15 @@ if result.ok:
     page_scrap_list.append(review_page(soup))
     page_scrap_list.append(image_url(soup))
 
+
+# Création du dossier /data 
 try:
     os.mkdir("data")
 except os.error:
     pass
 
+
+# Ecriture des données de la liste page_scrap_list dans un dossier csv / avec en tête
 with open("data/csv_" + str(title_page(soup)) + ".csv", "w", encoding='utf-8') as f:
     en_tete = ["URL", "UPC", "Title", "Price Tax Inc", "Price Tax Exc", "Available", "Description", "Category", "Review", "Image"]
     dw = csv.DictWriter(f, delimiter=",", fieldnames=en_tete)

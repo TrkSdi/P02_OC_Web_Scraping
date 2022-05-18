@@ -48,7 +48,7 @@ def scrap_category(base_url):
             all_article_category.append(row_list)
             
             
-        
+        # j'alimente la condition while afin que je puisse chercher les url de toutes les pages d'une catégorie
         i += 1
         category_url = base_url + "page-" + str(i) + ".html"
         reponse = requests.get(category_url)
@@ -63,6 +63,7 @@ def scrap_category(base_url):
         for row in all_article_category:
             writer.writerow(row)
 
+# création ou vérification de fichier 
 try:
     os.mkdir("data")
 except os.error:

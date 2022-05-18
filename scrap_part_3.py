@@ -4,6 +4,7 @@ from scrap_part_2 import scrap_category
 import os
 
 
+
 general_url = "http://books.toscrape.com/index.html"
 reponse = requests.get(general_url)
 category_main_url = []
