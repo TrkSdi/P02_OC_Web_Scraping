@@ -1,3 +1,25 @@
+
+# Projet 02 - Scrap de site Booktoscrap.com
+
+## Création de l'environnement 
+
+Dans Terminal, on exécuté la ligne de code suivante : 
+
+‘python -m venv nomenvironnement‘
+
+## Activation de l'environnement 
+
+Dans Terminal : 
+
+“souce nomenvironnement/bin/activate“
+
+## Script 
+
+### 1) Scrap 
+
+
+
+
 Pour la création de l'environnement j'ai suivi le cours sur l'environnement virtuel, dans ce sens j'ai créer un environnement avec la ligne de code :
 
 python -m venv <nomenvironnement>
