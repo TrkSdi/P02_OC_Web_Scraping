@@ -1,45 +1,67 @@
 
-# Projet 02 - Scrap de site Booktoscrap.com
+# Création environnement
 
-## Création de l'environnement 
+1. Pour créer l'environnement, sur terminal : 
 
-Dans Terminal, on exécuté la ligne de code suivante : 
+`python -m venv <nomenvironnement>`
 
-‘python -m venv nomenvironnement‘
+2. Par la suite, il faut procéder à l'activation de l'environnement, sur terminal:
 
-## Activation de l'environnement 
+`source <nomenvironnement>/bin/activate`
 
-Dans Terminal : 
+3. Installation dépendances, sur terminal:
+`pip install -r requirements.txt`
 
-“souce nomenvironnement/bin/activate“
+4. Vérification des modules & packages installés, sur terminal:
+`pip freeze`
 
-## Script 
-
-### 1) Scrap 
-
-
+# Execution des scripts
+il y a  quatre scripts distincts concernant chacune des étapes demandées.
 
 
-Pour la création de l'environnement j'ai suivi le cours sur l'environnement virtuel, dans ce sens j'ai créer un environnement avec la ligne de code :
+## Scraping article 
+1. Dans `scrap_part_1.py`
+- Scrap éléments requis 
+- Ajout dans liste `page_scrap_list`
+- Ecriture fichier CSV
 
-python -m venv <nomenvironnement>
+2. Excution du script par 
+`python scrap_part_1.py`
 
-Par la suite j'ai procédé à l'activation de cet environnement
+3. Changement d'article 
+- Nécessite le changement de l'url dans l'objet: 
+`page_url =`
 
-source <nomenvironnement>/bin/activate
 
-Par la suite, j'ai crée quatre scripts distincts concernant chacune des étapes demandées.
+## Scraping catégorie
+1. Dans `scrap_part_2.py`
+- Je liste les URLs de toutes les pages d'une catégorie 
+- Import les fonctions de chaque éléments de `scrap_part_1.py`
+- Ecriture fichier CSV
 
-Dans le scrap_part_1, j'ai crée des fonctions qui vont chercher un à un les éléments demandés et sont, par la suite, rajouté à une liste. 
-Après cela un fichier csv est crée reprenant les éléments. 
+2. Execution du script par
+`python scrap_part_2.py`
 
-Dans scrap_part_2, j'ai cherché les urls de toutes les pages d'une catégorie. J'ai ensuite importé les fonctions de scrap_part_1 pour les appliquer à chacune des pages d'une catégorie.
+3. Changement de categorie 
+`scrap_category(urlcategory)`
 
-Dans scrap_part_3, j'ai cherché les urls de toutes les pages de toutes les catégorie. J'ai ensuite importé la fonction de scrap_part_2 pour les appliquer à chacune des pages de toutes les catégories du site.
+## Scraping toutes catégories
+1. Dans `scrap_part_3.py`
+- Je liste les URLs de toutes les pages de toutes les catégories
+- Import de la fonction `scrap_category(urlcategory)` de `scrap_part_2.py`
+- Ecriture du fichier CSV
 
-Enfin dans scrap_part_4, j'ai isolé et ajouté à une liste les urls des images ainsi que leur titre, de tous les articles présents sur le site. Par la suite, j'ai procédé à leur téléchargement
+2. Execution du script par
+`python scrap_part_3.py`
 
- 
- 
+
+## Scraping et téléchargement images
+1. Dans `scrap_part_4.py`
+- Je liste les URLs des images de tous les articles du site ainsi que le titre
+- Téléchargement des images
+
+2. Execution du script par
+`python scrap_part_4.py`
+
  
  
