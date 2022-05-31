@@ -39,8 +39,6 @@ while result.ok:
     result = requests.get(general_url)
 
 
-
-
 try:
     os.mkdir("Image")
 except os.error:

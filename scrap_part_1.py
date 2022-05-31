@@ -90,7 +90,7 @@ page_url = "http://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.
 page_scrap_list = [page_url]
 
 
-
+# Requests URL
 result = requests.get(page_url)
 
 if result.ok:
@@ -115,7 +115,7 @@ except os.error:
 
 
 # Ecriture des données de la liste page_scrap_list dans un dossier csv / avec en tête
-with open("data/csv_" + str(title_page(soup)) + ".csv", "w", encoding='utf-8') as f:
+with open("data/csv_" + str.lower(title_page(soup)) + ".csv", "w", encoding='utf-8') as f:
     en_tete = ["URL", "UPC", "Title", "Price Tax Inc", "Price Tax Exc", "Available", "Description", "Category", "Review", "Image"]
     dw = csv.DictWriter(f, delimiter=",", fieldnames=en_tete)
     dw.writeheader()
