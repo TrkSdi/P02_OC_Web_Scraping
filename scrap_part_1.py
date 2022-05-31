@@ -4,6 +4,8 @@ import csv
 import os
 
 
+# Récupération des données d'une page 
+
 # Création de fonction pour chaque données requises:
 
 #UPC

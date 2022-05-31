@@ -5,6 +5,8 @@ from scrap_part_1 import upc_page,  title_page, price_inc_tax_page, price_excl_t
 import os
 
 
+# Récupération des données d'une catégorie entière
+
 def scrap_category(base_url):
 
     i = 1
@@ -53,7 +55,8 @@ def scrap_category(base_url):
         category_url = base_url + "page-" + str(i) + ".html"
         reponse = requests.get(category_url)
         
-        
+       
+    # écriture du fichier     
     with open("data/csv_" + str.lower(category_page(soup)) + ".csv", "w", encoding='utf-8') as f:
         #en tete
         en_tete = ["URL", "UPC", "Title", "Price Tax Inc", "Price Tax Exc", "Available", "Description", "Category", "Review", "Image"]
